@@ -1,0 +1,24 @@
+{
+    "name": "jarr/menu-builder-bundle",
+    "description": "Adds menu builder support in Symfony 3",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rick",
+            "email": "hello@rickwest.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jarr\\MenuBuilderBundle\\": "src/Jarr/MenuBuilderBundle"
+
+        }
+    },
+    "require": {
+        "symfony/config": "^3.0 || ^4.0",
+        "symfony/dependency-injection": "^3.0 || ^4.0",
+        "symfony/http-kernel": "^3.0 || ^4.0",
+        "twig/twig": "^1.0 || ^2.0"
+    }
+}

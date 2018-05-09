@@ -1,0 +1,5 @@
+services:
+    Jarr\MenuBuilderBundle\EventListener\MenuBuilderListener:
+        arguments: ['@twig']
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
