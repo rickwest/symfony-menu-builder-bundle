@@ -3,3 +3,6 @@ services:
         arguments: ['@twig']
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+
+    Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory:
+        public: true
