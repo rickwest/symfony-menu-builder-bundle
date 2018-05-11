@@ -6,27 +6,47 @@
 
 namespace Jarr\MenuBuilderBundle\EventListener;
 
+use Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface;
 use Jarr\MenuBuilderBundle\Models\Menu;
 use Jarr\MenuBuilderBundle\Models\MenuItem;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
+/**
+ * Class MenuBuilderListener
+ * @package Jarr\MenuBuilderBundle\EventListener
+ */
 class MenuBuilderListener
 {
+    /**
+     * @var \Twig_Environment
+     */
     private $twig;
 
-    public function __construct(\Twig_Environment $twig)
+    /**
+     * @var MenuBuilderFactoryInterface
+     */
+    private $menuBuidlerFactory;
+
+    /**
+     * MenuBuilderListener constructor.
+     * @param \Twig_Environment $twig
+     * @param MenuBuilderFactoryInterface $menuBuilderFactory
+     */
+    public function __construct(\Twig_Environment $twig, MenuBuilderFactoryInterface $menuBuilderFactory)
     {
         $this->twig = $twig;
+        $this->menuBuidlerFactory = $menuBuilderFactory;
     }
 
+    /**
+     * @param GetResponseEvent $event
+     */
     public function onKernelRequest(GetResponseEvent $event)
     {
-        $menu = (new Menu('TestMenu'))
-            ->addItem(new MenuItem('https://example.com/', 'Link 1'))
-            ->addItem(new MenuItem('https://example.com/', 'Link 2'))
-            ->addItem(new MenuItem('https://example.com/', 'Link 3'))
-        ;
+        $menus = $this->menuBuidlerFactory->getMenus();
 
-        $this->twig->addGlobal('menu', $menu);
+        foreach ($menus as $menu) {
+            $this->twig->addGlobal('menu', $menu);
+        }
     }
 }
