@@ -1,8 +1,12 @@
 services:
-    Jarr\MenuBuilderBundle\EventListener\MenuBuilderListener:
-        arguments: ['@twig']
+    menu_builder_event_listener:
+        class: Jarr\MenuBuilderBundle\EventListener\MenuBuilderListener
+        arguments:
+            - '@twig'
+            - '@menu_builder_factory'
         tags:
             - { name: kernel.event_listener, event: kernel.request }
 
-    Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory:
+    menu_builer_factory:
+        class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory:
         public: true
