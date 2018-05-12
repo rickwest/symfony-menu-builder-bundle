@@ -7,6 +7,6 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.request }
 
-    menu_builer_factory:
+    menu_builder_factory:
         class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory:
         public: true
