@@ -25,7 +25,7 @@ class MenuBuilderListener
     /**
      * @var MenuBuilderFactoryInterface
      */
-    private $menuBuidlerFactory;
+    private $menuBuilderFactory;
 
     /**
      * MenuBuilderListener constructor.
@@ -35,7 +35,7 @@ class MenuBuilderListener
     public function __construct(\Twig_Environment $twig, MenuBuilderFactoryInterface $menuBuilderFactory)
     {
         $this->twig = $twig;
-        $this->menuBuidlerFactory = $menuBuilderFactory;
+        $this->menuBuilderFactory = $menuBuilderFactory;
     }
 
     /**
@@ -43,7 +43,7 @@ class MenuBuilderListener
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
-        $menus = $this->menuBuidlerFactory->getMenus();
+        $menus = $this->menuBuilderFactory->getMenus();
 
         foreach ($menus as $menu) {
             $this->twig->addGlobal('menu', $menu);
