@@ -38,8 +38,10 @@ class Menu
     }
 
 
-    public function addItem(MenuItem $item)
+    public function addItem($url, $label)
     {
+        $item = new MenuItem($url, $label);
+
         $this->items[] = $item;
 
         return $this;
