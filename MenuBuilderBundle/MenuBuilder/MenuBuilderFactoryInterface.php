@@ -1,12 +1,11 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: rick
- * Date: 11/05/2018
- * Time: 18:13
+ * JarrMenuBuilderBundle
  */
 
 namespace Jarr\MenuBuilderBundle\MenuBuilder;
+
 use Jarr\MenuBuilderBundle\Models\Menu;
 
 
@@ -25,5 +24,5 @@ interface MenuBuilderFactoryInterface
     /**
      * @return Menu[]
      */
-    public function getMenus();
+    public function menus();
 }

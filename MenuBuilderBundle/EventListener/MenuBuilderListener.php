@@ -7,8 +7,6 @@
 namespace Jarr\MenuBuilderBundle\EventListener;
 
 use Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface;
-use Jarr\MenuBuilderBundle\Models\Menu;
-use Jarr\MenuBuilderBundle\Models\MenuItem;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 /**

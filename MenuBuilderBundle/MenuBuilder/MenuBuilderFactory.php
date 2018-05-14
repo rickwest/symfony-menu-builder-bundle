@@ -33,7 +33,7 @@ final class MenuBuilderFactory implements MenuBuilderFactoryInterface
     /**
      * @return Menu[]
      */
-    public function getMenus()
+    public function menus()
     {
         return $this->menus;
     }
