@@ -61,6 +61,4 @@ class MenuItem
     {
         return $this->class;
     }
-
-
 }

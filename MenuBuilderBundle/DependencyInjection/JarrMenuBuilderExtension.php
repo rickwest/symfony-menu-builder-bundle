@@ -6,6 +6,8 @@
 
 namespace Jarr\MenuBuilderBundle\DependencyInjection;
 
+use Jarr\MenuBuilderBundle\JarrMenuBuilderBundle;
+use Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -28,5 +30,9 @@ class JarrMenuBuilderExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->registerForAutoconfiguration(MenuBuilderInterface::class)
+                  ->addTag(JarrMenuBuilderBundle::MENU_BUILDER_TAG)
+        ;
     }
 }
