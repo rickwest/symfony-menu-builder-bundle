@@ -15,7 +15,7 @@ use Jarr\MenuBuilderBundle\Models\Menu;
 final class MenuBuilderFactory implements MenuBuilderFactoryInterface
 {
     /** @var Menu[] */
-    private $menus;
+    private $menus = [];
 
     /**
      * @param string $name
