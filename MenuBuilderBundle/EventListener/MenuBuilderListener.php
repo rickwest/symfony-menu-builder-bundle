@@ -41,10 +41,8 @@ class MenuBuilderListener
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
-        $menus = $this->menuBuilderFactory->getMenus();
-
-        foreach ($menus as $menu) {
-            $this->twig->addGlobal('menu', $menu);
+        foreach ($this->menuBuilderFactory->menus() as $menu) {
+            $this->twig->addGlobal($menu->getName(), $menu);
         }
     }
 }
