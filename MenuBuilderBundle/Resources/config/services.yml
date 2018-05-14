@@ -8,5 +8,5 @@ services:
             - { name: kernel.event_listener, event: kernel.request }
 
     menu_builder_factory:
-        class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory:
+        class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory
         public: true
