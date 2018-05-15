@@ -19,7 +19,7 @@ class MenuItem
     private $target;
 
     /** @var string */
-    private $class;
+    private $classes;
 
     /** @var MenuItem[] */
     private $children;
@@ -87,18 +87,18 @@ class MenuItem
     /**
      * @return string
      */
-    public function getClass()
+    public function getClasses()
     {
-        return $this->class;
+        return $this->classes;
     }
 
     /**
-     * @param string $class
+     * @param string $classes
      * @return MenuItem
      */
-    public function setClass(string $class)
+    public function setClasses(string $classes)
     {
-        $this->class = $class;
+        $this->classes = $classes;
         return $this;
     }
 
