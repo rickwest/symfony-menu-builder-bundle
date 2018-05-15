@@ -15,7 +15,10 @@ class Menu
     /** @var MenuItem[] */
     private $items;
 
-    public function __construct($name)
+    /** @var string */
+    public $classes;
+
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
@@ -28,6 +31,33 @@ class Menu
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return Menu
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClasses()
+    {
+        return $this->classes;
+    }
+
+    /**
+     * @param string $classes
+     * @return Menu
+     */
+    public function setClasses(string $classes)
+    {
+        $this->classes = $classes;
+        return $this;
+    }
 
     /**
      * @return MenuItem[]
