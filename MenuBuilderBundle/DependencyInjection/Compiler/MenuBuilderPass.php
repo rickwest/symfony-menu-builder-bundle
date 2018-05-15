@@ -27,7 +27,7 @@ class MenuBuilderPass implements CompilerPassInterface
         $taggedServices = $container->findTaggedServiceIds(JarrMenuBuilderBundle::MENU_BUILDER_TAG);
 
         foreach ($taggedServices as $id => $tags) {
-            $definition->addMethodCall('addMenu', [new Reference($id)]);
+            $definition->addMethodCall('add', [new Reference($id)]);
         }
     }
 }
