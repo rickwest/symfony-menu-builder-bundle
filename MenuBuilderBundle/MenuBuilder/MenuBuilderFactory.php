@@ -18,16 +18,20 @@ final class MenuBuilderFactory implements MenuBuilderFactoryInterface
     private $menus = [];
 
     /**
+     * @param MenuBuilderInterface $builder
+     */
+    public function add(MenuBuilderInterface $builder)
+    {
+        $this->menus[] = $builder->build();
+    }
+
+    /**
      * @param string $name
      * @return Menu
      */
     public function create($name)
     {
-        $menu = new Menu($name);
-
-        $this->menus[] = $menu;
-
-        return $menu;
+        return new Menu($name);
     }
 
     /**

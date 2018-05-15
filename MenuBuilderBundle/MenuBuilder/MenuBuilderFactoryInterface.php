@@ -15,6 +15,12 @@ use Jarr\MenuBuilderBundle\Models\Menu;
  */
 interface MenuBuilderFactoryInterface
 {
+
+    /**
+     * @param MenuBuilderInterface $builder
+     */
+    public function add(MenuBuilderInterface $builder);
+
     /**
      * @param string $name
      * @return Menu

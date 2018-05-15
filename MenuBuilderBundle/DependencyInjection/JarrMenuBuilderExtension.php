@@ -31,6 +31,7 @@ class JarrMenuBuilderExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
+        // every class that implements the menu builder interface will automatically be tagged
         $container->registerForAutoconfiguration(MenuBuilderInterface::class)
                   ->addTag(JarrMenuBuilderBundle::MENU_BUILDER_TAG)
         ;

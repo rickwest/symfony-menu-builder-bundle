@@ -10,3 +10,7 @@ services:
     menu_builder_factory:
         class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory
         public: true
+
+#   By creating an alias, the autowiring subsystem knows that the @menu_builder_factory service should be injected
+#   when dealing with the MenuBuilderFactoryInterface.
+    Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface: '@menu_builder_factory'
