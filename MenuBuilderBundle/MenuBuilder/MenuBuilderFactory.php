@@ -7,6 +7,7 @@
 namespace Jarr\MenuBuilderBundle\MenuBuilder;
 
 use Jarr\MenuBuilderBundle\Models\Menu;
+use Jarr\MenuBuilderBundle\Models\MenuItem;
 
 /**
  * Class MenuBuilderFactory
@@ -29,9 +30,20 @@ final class MenuBuilderFactory implements MenuBuilderFactoryInterface
      * @param string $name
      * @return Menu
      */
-    public function create($name)
+    public function create(string $name)
     {
         return new Menu($name);
+    }
+
+
+    /**
+     * @param string $url
+     * @param string $label
+     * @return MenuItem
+     */
+    public function item(string $url, string $label)
+    {
+        return new MenuItem($url, $label);
     }
 
     /**
