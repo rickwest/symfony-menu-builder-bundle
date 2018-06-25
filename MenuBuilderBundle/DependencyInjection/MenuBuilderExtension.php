@@ -1,13 +1,9 @@
 <?php
 
-/**
- * JarrMenuBuilderBundle
- */
+namespace RickWest\MenuBuilderBundle\DependencyInjection;
 
-namespace Jarr\MenuBuilderBundle\DependencyInjection;
-
-use Jarr\MenuBuilderBundle\JarrMenuBuilderBundle;
-use Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderInterface;
+use RickWest\MenuBuilderBundle\MenuBuilderBundle;
+use RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -18,7 +14,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class JarrMenuBuilderExtension extends Extension
+class MenuBuilderExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -33,7 +29,7 @@ class JarrMenuBuilderExtension extends Extension
 
         // every class that implements the menu builder interface will automatically be tagged
         $container->registerForAutoconfiguration(MenuBuilderInterface::class)
-                  ->addTag(JarrMenuBuilderBundle::MENU_BUILDER_TAG)
+                  ->addTag(MenuBuilderBundle::MENU_BUILDER_TAG)
         ;
     }
 }

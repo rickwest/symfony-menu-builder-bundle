@@ -1,12 +1,11 @@
 <?php
 
+namespace RickWest\MenuBuilderBundle\Models;
+
 /**
- * JarrMenuBuilderBundle
+ * Class Menu
+ * @package RickWest\MenuBuilderBundle\Models
  */
-
-namespace Jarr\MenuBuilderBundle\Models;
-
-
 class Menu
 {
     /** @var string */
@@ -18,6 +17,10 @@ class Menu
     /** @var string */
     public $classes;
 
+    /**
+     * Menu constructor.
+     * @param string $name
+     */
     public function __construct(string $name)
     {
         $this->name = $name;
@@ -68,6 +71,11 @@ class Menu
     }
 
 
+    /**
+     * @param $url
+     * @param $label
+     * @return $this
+     */
     public function addItem($url, $label)
     {
         $item = new MenuItem($url, $label);

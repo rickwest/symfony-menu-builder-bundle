@@ -1,17 +1,13 @@
 <?php
 
-/**
- * JarrMenuBuilderBundle
- */
+namespace RickWest\MenuBuilderBundle\EventListener;
 
-namespace Jarr\MenuBuilderBundle\EventListener;
-
-use Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface;
+use RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 /**
  * Class MenuBuilderListener
- * @package Jarr\MenuBuilderBundle\EventListener
+ * @package RickWest\MenuBuilderBundle\EventListener
  */
 class MenuBuilderListener
 {

@@ -1,5 +1,5 @@
 {
-    "name": "jarr/menu-builder-bundle",
+    "name": "symfony-menu-builder-bundle",
     "description": "Adds menu builder support in Symfony 3",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Jarr\\MenuBuilderBundle\\": "MenuBuilderBundle"
+            "RickWest\\MenuBuilderBundle\\": "MenuBuilderBundle"
 
         }
     },

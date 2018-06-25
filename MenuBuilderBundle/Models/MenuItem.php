@@ -1,12 +1,11 @@
 <?php
 
+namespace RickWest\MenuBuilderBundle\Models;
+
 /**
- * JarrMenuBuilderBundle
+ * Class MenuItem
+ * @package RickWest\MenuBuilderBundle\Models
  */
-
-namespace Jarr\MenuBuilderBundle\Models;
-
-
 class MenuItem
 {
     /** @var string */
@@ -24,6 +23,11 @@ class MenuItem
     /** @var MenuItem[] */
     private $children;
 
+    /**
+     * MenuItem constructor.
+     * @param string $url
+     * @param string $label
+     */
     public function __construct(string $url, string $label)
     {
         $this->url = $url;

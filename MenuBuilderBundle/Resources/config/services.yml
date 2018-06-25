@@ -1,6 +1,6 @@
 services:
     menu_builder_event_listener:
-        class: Jarr\MenuBuilderBundle\EventListener\MenuBuilderListener
+        class: RickWest\MenuBuilderBundle\EventListener\MenuBuilderListener
         arguments:
             - '@twig'
             - '@menu_builder_factory'
@@ -8,9 +8,9 @@ services:
             - { name: kernel.event_listener, event: kernel.request }
 
     menu_builder_factory:
-        class: Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory
+        class: RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory
         public: true
 
 #   By creating an alias, the autowiring subsystem knows that the @menu_builder_factory service should be injected
 #   when dealing with the MenuBuilderFactoryInterface.
-    Jarr\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface: '@menu_builder_factory'
+    RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface: '@menu_builder_factory'

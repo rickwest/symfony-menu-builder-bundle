@@ -1,16 +1,12 @@
 <?php
 
-/**
- * JarrMenuBuilderBundle
- */
+namespace RickWest\MenuBuilderBundle\MenuBuilder;
 
-namespace Jarr\MenuBuilderBundle\MenuBuilder;
-
-use Jarr\MenuBuilderBundle\Models\Menu;
+use RickWest\MenuBuilderBundle\Models\Menu;
 
 /**
  * Interface MenuBuilderInterface
- * @package Jarr\MenuBuilderBundle\MenuBuilder
+ * @package RickWest\MenuBuilderBundle\MenuBuilder
  */
 interface MenuBuilderInterface
 {
