@@ -1,5 +1,5 @@
 {
-    "name": "symfony-menu-builder-bundle",
+    "name": "rickwest/symfony-menu-builder-bundle",
     "description": "Adds menu builder support in Symfony 3",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -12,7 +12,6 @@
     "autoload": {
         "psr-4": {
             "RickWest\\MenuBuilderBundle\\": "MenuBuilderBundle"
-
         }
     },
     "require": {
