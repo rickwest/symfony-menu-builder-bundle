@@ -8,6 +8,14 @@ namespace RickWest\MenuBuilderBundle\Models;
  */
 class MenuItem
 {
+    const TARGET_BLANK = '_blank';
+
+    const TARGET_SELF = '_self';
+
+    const TARGET_PARENT = '_parent';
+
+    const TARGET_TOP = '_top';
+
     /** @var string */
     private $url;
 
@@ -15,29 +23,60 @@ class MenuItem
     private $label;
 
     /** @var string */
-    private $target;
+    private $target = self::TARGET_BLANK;
 
     /** @var string */
-    private $classes;
+    private $classes = '';
 
     /** @var MenuItem[] */
-    private $children;
+    private $children = [];
 
     /**
      * MenuItem constructor.
      * @param string $url
      * @param string $label
+     * @param array $options
      */
-    public function __construct(string $url, string $label)
+    public function __construct(string $url, string $label, $options = [])
     {
-        $this->url = $url;
         $this->label = $label;
+        $this->url = $url;
+        $this->buildOptions($options);
+    }
+
+    /**
+     * @param $options
+     */
+    public function buildOptions($options)
+    {
+        if (array_key_exists('target', $options)) {
+            $this->target = $options['target'];
+        }
+
+        if (array_key_exists('classes', $options)) {
+            $this->classes = $options['classes'];
+        }
+
+        if (array_key_exists('children', $options)) {
+            $this->children = $options['children'];
+        }
+    }
+
+    /**
+     * @param MenuItem $child
+     * @return $this
+     */
+    public function addChild(MenuItem $child)
+    {
+        $this->children[] = $child;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -46,7 +85,7 @@ class MenuItem
      * @param string $url
      * @return MenuItem
      */
-    public function setUrl(string $url)
+    public function setUrl(string $url): MenuItem
     {
         $this->url = $url;
         return $this;
@@ -55,7 +94,7 @@ class MenuItem
     /**
      * @return string
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
@@ -64,7 +103,7 @@ class MenuItem
      * @param string $label
      * @return MenuItem
      */
-    public function setLabel(string $label)
+    public function setLabel(string $label): MenuItem
     {
         $this->label = $label;
         return $this;
@@ -73,7 +112,7 @@ class MenuItem
     /**
      * @return string
      */
-    public function getTarget()
+    public function getTarget(): string
     {
         return $this->target;
     }
@@ -82,7 +121,7 @@ class MenuItem
      * @param string $target
      * @return MenuItem
      */
-    public function setTarget(string $target)
+    public function setTarget(string $target): MenuItem
     {
         $this->target = $target;
         return $this;
@@ -91,7 +130,7 @@ class MenuItem
     /**
      * @return string
      */
-    public function getClasses()
+    public function getClasses(): string
     {
         return $this->classes;
     }
@@ -100,7 +139,7 @@ class MenuItem
      * @param string $classes
      * @return MenuItem
      */
-    public function setClasses(string $classes)
+    public function setClasses(string $classes): MenuItem
     {
         $this->classes = $classes;
         return $this;
@@ -109,7 +148,7 @@ class MenuItem
     /**
      * @return MenuItem[]
      */
-    public function getChildren()
+    public function getChildren(): array
     {
         return $this->children;
     }
@@ -118,7 +157,7 @@ class MenuItem
      * @param MenuItem[] $children
      * @return MenuItem
      */
-    public function setChildren(array $children)
+    public function setChildren(array $children): MenuItem
     {
         $this->children = $children;
         return $this;
