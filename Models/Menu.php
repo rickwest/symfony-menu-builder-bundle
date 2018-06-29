@@ -72,16 +72,12 @@ class Menu
 
 
     /**
-     * @param $url
-     * @param $label
+     * @param MenuItem $item
      * @return $this
      */
-    public function addItem($url, $label)
+    public function addItem(MenuItem $item)
     {
-        $item = new MenuItem($url, $label);
-
         $this->items[] = $item;
-
         return $this;
     }
 }
