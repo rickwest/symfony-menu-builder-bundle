@@ -3,7 +3,7 @@
 namespace RickWest\MenuBuilderBundle\EventListener;
 
 use RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderFactoryInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 /**
  * Class MenuBuilderListener
@@ -33,9 +33,9 @@ class MenuBuilderListener
     }
 
     /**
-     * @param GetResponseEvent $event
+     * @param FilterResponseEvent $event
      */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelResponse(FilterResponseEvent $event)
     {
         foreach ($this->menuBuilderFactory->menus() as $menu) {
             $this->twig->addGlobal($menu->getName(), $menu);

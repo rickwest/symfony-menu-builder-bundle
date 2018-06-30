@@ -5,7 +5,7 @@ services:
             - '@twig'
             - '@menu_builder_factory'
         tags:
-            - { name: kernel.event_listener, event: kernel.request }
+            - { name: kernel.event_listener, event: kernel.response }
 
     menu_builder_factory:
         class: RickWest\MenuBuilderBundle\MenuBuilder\MenuBuilderFactory
