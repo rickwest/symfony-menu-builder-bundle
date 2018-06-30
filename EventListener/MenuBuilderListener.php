@@ -36,7 +36,7 @@ class MenuBuilderListener
     /**
      * @param FilterControllerEvent $event
      */
-    public function onKernelResponse(FilterControllerEvent $event)
+    public function onKernelController(FilterControllerEvent $event)
     {
         foreach ($this->menuBuilderFactory->menus() as $menu) {
             $this->twig->addGlobal($menu->getName(), $menu);

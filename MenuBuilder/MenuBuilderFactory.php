@@ -31,14 +31,13 @@ final class MenuBuilderFactory implements MenuBuilderFactoryInterface
         return new Menu($name);
     }
 
-
     /**
      * @param string $url
      * @param string $label
      * @param array $options
      * @return MenuItem
      */
-    public function item(string $url, string $label, array $options)
+    public function item(string $url, string $label, array $options = [])
     {
         return new MenuItem($url, $label, $options);
     }
